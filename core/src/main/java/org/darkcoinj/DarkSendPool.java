@@ -1,9 +1,9 @@
 package org.darkcoinj;
 
-import org.bitcoinj.core.*;
-import org.bitcoinj.script.Script;
-import org.bitcoinj.utils.ContextPropagatingThreadFactory;
-import org.bitcoinj.utils.Threading;
+import org.dashj.core.*;
+import org.dashj.script.Script;
+import org.dashj.utils.ContextPropagatingThreadFactory;
+import org.dashj.utils.Threading;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

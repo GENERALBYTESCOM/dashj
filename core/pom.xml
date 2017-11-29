@@ -279,8 +279,8 @@
                 <configuration>
                     <excludes>
                         <exclude>**/Protos*.class</exclude> <!-- Exclude generated protobuf classes -->
-                        <exclude>org/bitcoinj/jni/*</exclude> <!-- Exclude JNI classes -->
-                        <exclude>org/bitcoin/*</exclude> <!-- Exclude native classes -->
+                        <exclude>org/dashj/jni/*</exclude> <!-- Exclude JNI classes -->
+                        <exclude>org/dash/*</exclude> <!-- Exclude native classes -->
                     </excludes>
                 </configuration>
                 <executions>

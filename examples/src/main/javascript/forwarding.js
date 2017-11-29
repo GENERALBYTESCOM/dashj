@@ -22,7 +22,7 @@ kit.awaitRunning()
 
 var wallet = kit.wallet();
 var myAddr = wallet.currentReceiveAddress()
-var uri = "bitcoin:" + myAddr;
+var uri = "dash:" + myAddr;
 print("Send coins to: " + myAddr);
 print("QRcode: http://qrickit.com/api/qr?d=" + uri);
 

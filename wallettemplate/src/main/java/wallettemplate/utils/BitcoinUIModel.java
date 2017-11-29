@@ -14,11 +14,10 @@
 
 package wallettemplate.utils;
 
-import org.bitcoinj.core.listeners.DownloadProgressTracker;
-import org.bitcoinj.wallet.Wallet;
-import org.bitcoinj.wallet.listeners.AbstractWalletEventListener;
-import org.bitcoinj.wallet.listeners.WalletChangeEventListener;
-import org.bitcoinj.core.*;
+import org.dashj.core.listeners.DownloadProgressTracker;
+import org.dashj.wallet.Wallet;
+import org.dashj.wallet.listeners.WalletChangeEventListener;
+import org.dashj.core.*;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -28,7 +27,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import java.util.Date;
 
 /**
- * A class that exposes relevant bitcoin stuff as JavaFX bindable properties.
+ * A class that exposes relevant dash stuff as JavaFX bindable properties.
  */
 public class BitcoinUIModel {
     private SimpleObjectProperty<Address> address = new SimpleObjectProperty<>();

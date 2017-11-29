@@ -14,9 +14,9 @@
 
 package wallettemplate;
 
-import org.bitcoinj.core.listeners.DownloadProgressTracker;
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.utils.MonetaryFormat;
+import org.dashj.core.listeners.DownloadProgressTracker;
+import org.dashj.core.Coin;
+import org.dashj.utils.MonetaryFormat;
 import com.subgraph.orchid.TorClient;
 import com.subgraph.orchid.TorInitializationListener;
 import javafx.animation.FadeTransition;
