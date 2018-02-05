@@ -1328,7 +1328,7 @@ public class InstantSend {
             tx.getConfidence().setIXType(TransactionConfidence.IXType.IX_LOCKED);
             tx.getConfidence().queueListeners(TransactionConfidence.Listener.ChangeReason.IX_TYPE);
 
-            log.info("instantsend", "CInstantSend::UpdateLockedTransaction -- done, txid="+ txHash);
+            log.info("CInstantSend::UpdateLockedTransaction -- done, txid="+ txHash);
 
         }
         finally {
