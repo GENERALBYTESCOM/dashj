@@ -786,7 +786,7 @@ public class InstantSend {
             Sha256Hash txHash = txLockCandidate.txLockRequest.getHash();
             if (txLockCandidate.isAllOutPointsReady() && !isLockedInstantSendTransaction(txHash)) {
                 // we have enough votes now
-                log.info("instantsend--CInstantSend::TryToFinalizeLockCandidate -- Transaction Lock is ready to complete, txid=", txHash);
+                log.info("instantsend--CInstantSend::TryToFinalizeLockCandidate -- Transaction Lock is ready to complete, txid=" + txHash);
                 if (resolveConflicts(txLockCandidate, nInstantSendKeepLock)) {
                     lockTransactionInputs(txLockCandidate);
                     updateLockedTransaction(txLockCandidate);
