@@ -20,6 +20,7 @@ import org.dashj.core.ECKey;
 import org.dashj.crypto.BIP38PrivateKey.BadPassphraseException;
 import org.dashj.params.MainNetParams;
 import org.dashj.params.TestNet3Params;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;

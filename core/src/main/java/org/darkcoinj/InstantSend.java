@@ -1,18 +1,17 @@
 package org.darkcoinj;
 
 import com.google.common.collect.Lists;
-import org.bitcoinj.core.*;
-import org.bitcoinj.utils.Threading;
+import org.dashj.core.*;
+import org.dashj.utils.Threading;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.security.provider.SHA;
 
 import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static org.bitcoinj.core.DarkCoinSystem.fMasterNode;
-import static org.bitcoinj.core.SporkManager.SPORK_2_INSTANTSEND_ENABLED;
-import static org.bitcoinj.core.SporkManager.SPORK_3_INSTANTSEND_BLOCK_FILTERING;
+import static org.dashj.core.DarkCoinSystem.fMasterNode;
+import static org.dashj.core.SporkManager.SPORK_2_INSTANTSEND_ENABLED;
+import static org.dashj.core.SporkManager.SPORK_3_INSTANTSEND_BLOCK_FILTERING;
 
 /**
  * Created by Eric on 2/8/2015.
