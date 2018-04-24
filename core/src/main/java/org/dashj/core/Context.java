@@ -267,6 +267,7 @@ public class Context {
             masternodeSync.setBlockChain(chain);
             instantSend.setBlockChain(chain);
         }
+        params.setDIPActiveAtTip(chain.getBestChainHeight() >= params.getDIP0001BlockHeight());
     }
 
     public boolean isLiteMode() { return liteMode; }
@@ -291,7 +292,7 @@ public class Context {
     BlockChainListener updateHeadListener = new BlockChainListener () {
         public void notifyNewBestBlock(StoredBlock block) throws VerificationException
         {
-            masternodeSync.updateBlockTip(block);
+            masternodeSync.updateBlockTip(block, false);
         }
 
         public void reorganize(StoredBlock splitPoint, List<StoredBlock> oldBlocks,
@@ -334,6 +335,7 @@ public class Context {
 
     public void updatedChainHead(StoredBlock chainHead)
     {
+        params.setDIPActiveAtTip(chainHead.getHeight() >= params.getDIP0001BlockHeight());
         if(initializedDash) {
             instantSend.updatedChainHead(chainHead);
 

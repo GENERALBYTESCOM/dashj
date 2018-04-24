@@ -89,6 +89,12 @@ public abstract class NetworkParameters {
     protected int majorityRejectBlockOutdated;
     protected int majorityWindow;
 
+    /** Used to check for DIP0001 upgrade */
+    protected int DIP0001Window;
+    protected int DIP0001Upgrade;
+    protected int DIP0001BlockHeight;
+    protected boolean DIP0001ActiveAtTip = false;
+
     /**
      * See getId(). This may be null for old deserialized wallets. In that case we derive it heuristically
      * by looking at the port number.
@@ -551,7 +557,7 @@ public abstract class NetworkParameters {
     public static enum ProtocolVersion {
         MINIMUM(CoinDefinition.MIN_PROTOCOL_VERSION),
         PONG(60001),
-        BLOOM_FILTER(70000),
+        BLOOM_FILTER(CoinDefinition.MIN_PROTOCOL_VERSION),
         CURRENT(CoinDefinition.PROTOCOL_VERSION);
 
         private final int bitcoinProtocol;
@@ -564,4 +570,9 @@ public abstract class NetworkParameters {
             return bitcoinProtocol;
         }
     }
+
+    //DASH Specific
+    public boolean isDIP0001ActiveAtTip() { return DIP0001ActiveAtTip; }
+    public void setDIPActiveAtTip(boolean active) { DIP0001ActiveAtTip = active; }
+    public int getDIP0001BlockHeight() { return DIP0001BlockHeight; }
 }

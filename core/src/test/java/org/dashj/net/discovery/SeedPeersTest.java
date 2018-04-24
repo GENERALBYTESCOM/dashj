@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
-
+@Ignore
 public class SeedPeersTest {
     @Test
     public void getPeer_one() throws Exception{

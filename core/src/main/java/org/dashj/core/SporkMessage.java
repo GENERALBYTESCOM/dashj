@@ -77,7 +77,7 @@ public class SporkMessage extends Message{
 
         Utils.uint32ToByteStreamLE(nSporkID, stream);
         Utils.int64ToByteStreamLE(nValue, stream);
-        Utils.int64ToByteStreamLE(nValue, stream);
+        Utils.int64ToByteStreamLE(nTimeSigned, stream);
 
         sig.bitcoinSerialize(stream);
     }
@@ -89,7 +89,7 @@ public class SporkMessage extends Message{
             ByteArrayOutputStream bos = new UnsafeByteArrayOutputStream(HASH_SIZE);
             Utils.uint32ToByteStreamLE(nSporkID, bos);
             Utils.int64ToByteStreamLE(nValue, bos);
-            Utils.int64ToByteStreamLE(nValue, bos);
+            Utils.int64ToByteStreamLE(nTimeSigned, bos);
             return Sha256Hash.wrapReversed(x11Digest(bos.toByteArray()));
         } catch (IOException e) {
             throw new RuntimeException(e); // Cannot happen.
