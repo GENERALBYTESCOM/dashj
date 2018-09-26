@@ -1,6 +1,6 @@
-package org.bitcoinj.core;
+package org.dashj.core;
 
-import org.bitcoinj.utils.Threading;
+import org.dashj.utils.Threading;
 import org.darkcoinj.DarkSend;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ import java.math.BigInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
 import static com.hashengineering.crypto.X11.x11Digest;
-import static org.bitcoinj.core.SporkManager.SPORK_6_NEW_SIGS;
+import static org.dashj.core.SporkManager.SPORK_6_NEW_SIGS;
 
 /**
  * Created by Eric on 2/8/2015.

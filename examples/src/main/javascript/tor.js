@@ -1,7 +1,7 @@
 // Example of how to connect to a Tor hidden service and use it as a peer.
 // See demo.js to learn how to invoke this program.
 
-var bcj = org.bitcoinj;
+var bcj = org.dashj;
 var params = bcj.params.MainNetParams.get();
 var context = new bcj.core.Context(params);
 bcj.utils.BriefLogFormatter.init();

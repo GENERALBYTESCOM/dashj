@@ -368,7 +368,7 @@ public class DeterministicKeyChain implements EncryptableKeyChain {
 
     /**
      * Creates a deterministic key chain with an encrypted deterministic seed using the provided account path.
-     *  Using {@link org.bitcoinj.crypto.KeyCrypter KeyCrypter} to decrypt.
+     *  Using {@link org.dashj.crypto.KeyCrypter KeyCrypter} to decrypt.
      */
     protected DeterministicKeyChain(DeterministicSeed seed, @Nullable KeyCrypter crypter,
                                     ImmutableList<ChildNumber> accountPath) {

@@ -34,7 +34,7 @@
 
 
 // Import some stuff.
-var bcj = org.bitcoinj;
+var bcj = org.dashj;
 var ECKey = bcj.core.ECKey;
 
 // We'll use the testnet for now.
