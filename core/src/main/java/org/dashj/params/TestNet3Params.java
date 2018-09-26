@@ -71,11 +71,27 @@ public class TestNet3Params extends AbstractBitcoinNetParams {
         checkpoints.put(   1999, Sha256Hash.wrap("00000052e538d27fa53693efe6fb6892a0c1d26c0235f599171c48a3cce553b1"));
         checkpoints.put(   2999, Sha256Hash.wrap("0000024bc3f4f4cb30d29827c13d921ad77d2c6072e586c7f60d83c2722cdcc5"));
 
-        addrSeeds = null;
+        addrSeeds = new int[] {
+                0xf8a7ed22,
+                0xe05dee22,
+                0x2e4de52b,
+                0x5f68202d,
+                0x1fd7202d,
+                0xe6dd202d,
+                0x4ced202d,
+                0x712e0734,
+                0x8117c934,
+                0x8e14448a,
+                0x5008e3a5,
+                0x80e5b6d9,
+                0x84e5b6d9,
+                0x86e5b6d9,
+                0x88e5b6d9
+        };
         bip32HeaderPub = 0x043587cf;
         bip32HeaderPriv = 0x04358394 ;
 
-        strSporkKey = "046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb501b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f75e76869f0e";
+        strSporkAddress = "yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55";
 
      //   bip32HeaderPub = 0x043587CF;
      //   bip32HeaderPriv = 0x04358394;

@@ -132,6 +132,9 @@ message Key {
 
   // Encrypted version of the seed
   optional EncryptedData encrypted_deterministic_seed = 9;
+
+  // The path to the root. Only applicable to a DETERMINISTIC_MNEMONIC key entry.
+  repeated uint32 account_path = 10 [packed = true];
 }
 
 message Script {
@@ -223,6 +226,9 @@ message TransactionConfidence {
   }
 
   optional IXType ixType = 19 [default = IX_NONE];
+  optional int32 peerCount = 20;
+  optional int32 minConnections = 21;
+  optional int64 sentTime = 22;
 
   // Next tag: 9
 }

@@ -1179,6 +1179,30 @@ public abstract class AbstractBlockChain {
             return;
         }
 
+        if(params.getId().equals(NetworkParameters.ID_TESTNET) &&
+                storedPrev.getChainWork().compareTo(new BigInteger(Utils.HEX.decode("000000000000000000000000000000000000000000000000003e9ccfe0e03e01"))) >= 0)
+        {
+            if (storedPrev.getChainWork().compareTo(new BigInteger(Utils.HEX.decode("000000000000000000000000000000000000000000000000003ff00000000000"))) >= 0) {
+                // recent block is more than 2 hours old
+                if (nextBlock.getTimeSeconds() > storedPrev.getHeader().getTimeSeconds() + 2 * 60 * 60) {
+                    verifyDifficulty(params.getMaxTarget(), storedPrev, nextBlock);
+                    return;
+                }
+                // recent block is more than 10 minutes old
+                if (nextBlock.getTimeSeconds() > storedPrev.getHeader().getTimeSeconds() + NetworkParameters.TARGET_SPACING*4) {
+                    BigInteger newTarget = storedPrev.getHeader().getDifficultyTargetAsInteger().multiply(BigInteger.valueOf(10));
+                    verifyDifficulty(newTarget, storedPrev, nextBlock);
+                    return;
+                }
+            } else {
+                // old stuff
+                if(nextBlock.getTimeSeconds() > storedPrev.getHeader().getTimeSeconds() + NetworkParameters.TARGET_SPACING*2) {
+                    verifyDifficulty(params.getMaxTarget(), storedPrev, nextBlock);
+                    return;
+                }
+            }
+        }
+
         for (int i = 1; BlockReading != null && BlockReading.getHeight() > 0; i++) {
             if (PastBlocksMax > 0 && i > PastBlocksMax) { break; }
             CountBlocks++;

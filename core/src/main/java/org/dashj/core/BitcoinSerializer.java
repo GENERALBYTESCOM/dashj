@@ -251,7 +251,7 @@ public class BitcoinSerializer extends MessageSerializer {
         } else if (command.equals("txlvote")) {
             return new TransactionLockVote(params, payloadBytes);
         } else if (command.equals("dsq")) {
-            return new DarkSendQueue(params, payloadBytes);
+            return new DarkSendQueue(params);
         } else if (command.equals("mnb")) {
             return new MasternodeBroadcast(params, payloadBytes);
         } else if( command.equals("mnp")) {
@@ -262,6 +262,8 @@ public class BitcoinSerializer extends MessageSerializer {
             return new SyncStatusCount(params, payloadBytes);
         } else if(command.equals("sendheaders")) {
             return new SendHeadersMessage(params);
+        } else if(command.equals("sendcmpct")) {
+            return new SendCompactBlocksMessage(params);
         } else if(command.equals("getsporks")) {
             return new GetSporksMessage(params);
         }
