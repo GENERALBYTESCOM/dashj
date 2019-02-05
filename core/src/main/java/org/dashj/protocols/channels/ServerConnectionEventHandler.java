@@ -22,7 +22,7 @@ import org.dashj.net.ProtobufConnection;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
-import org.bitcoin.paymentchannel.Protos;
+import org.dash.paymentchannel.Protos;
 
 import javax.annotation.Nullable;
 

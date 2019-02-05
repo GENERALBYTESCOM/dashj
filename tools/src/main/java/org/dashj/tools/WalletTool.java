@@ -107,7 +107,7 @@ public class WalletTool {
     private static File chainFileName;
     private static ValidationMode mode;
     private static String password;
-    private static org.bitcoin.protocols.payments.Protos.PaymentRequest paymentRequest;
+    private static org.dash.protocols.payments.Protos.PaymentRequest paymentRequest;
     private static OptionSpec<Integer> lookaheadSize;
 
     public static class Condition {
@@ -1032,7 +1032,7 @@ public class WalletTool {
                 System.exit(1);
             }
             try {
-                paymentRequest = org.bitcoin.protocols.payments.Protos.PaymentRequest.newBuilder().mergeFrom(stream).build();
+                paymentRequest = org.dash.protocols.payments.Protos.PaymentRequest.newBuilder().mergeFrom(stream).build();
             } catch(IOException e) {
                 System.err.println("Failed to parse payment request from file " + e.getMessage());
                 System.exit(1);

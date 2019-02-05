@@ -23,7 +23,7 @@ import org.dashj.params.MainNetParams;
 import org.dashj.params.TestNet3Params;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
-import org.bitcoin.protocols.payments.Protos;
+import org.dash.protocols.payments.Protos;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -25,10 +25,10 @@ import org.dashj.protocols.payments.PaymentProtocol.PkiVerificationData;
 import org.dashj.protocols.payments.PaymentProtocolException.PkiVerificationException;
 import org.dashj.script.ScriptBuilder;
 import org.dashj.testing.FakeTxBuilder;
-import org.bitcoin.protocols.payments.Protos;
-import org.bitcoin.protocols.payments.Protos.Payment;
-import org.bitcoin.protocols.payments.Protos.PaymentACK;
-import org.bitcoin.protocols.payments.Protos.PaymentRequest;
+import org.dash.protocols.payments.Protos;
+import org.dash.protocols.payments.Protos.Payment;
+import org.dash.protocols.payments.Protos.PaymentACK;
+import org.dash.protocols.payments.Protos.PaymentRequest;
 import org.junit.Before;
 import org.junit.Test;
 

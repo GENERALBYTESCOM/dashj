@@ -13,19 +13,17 @@ CURVERSION=`grep '<artifactId>dashj-parent</artifactId>' -A1 pom.xml  | tail -1 
 
 sed -i '/<module>wallettemplate<\/module>/d' pom.xml
 sed -i "s/<version>$CURVERSION<\/version>/<version>$CURVERSION-$D<\/version>/" {,**/}pom.xml
-sed -i 's/org\.bitcoinj\./org\.dashj\./g' **/*.java
+sed -i 's/org\.bitcoinj\./org\.dashj\./g' **/*.java **/*.proto
+sed -i 's/org\.bitcoin\([.;]\)/org\.dash\1/g' **/*.java
 rename -v 's/org\/bitcoinj/org\/dashj/' **/org/bitcoinj
+rename -v 's/org\/bitcoin/org\/dash/' **/org/bitcoin
 rename 's/org\.bitcoin\./org\.darkcoin\./' **
 
 git add .
 git commit -m "rename bitcoinj package to dashj"
 
-git cherry-pick 53827dbf2e8bdf0f5deb4d09ee1e9ec851a6eb10
+git cherry-pick 53827dbf2e8bdf0f5deb4d09ee1e9ec851a6eb10 # GB patch - dpub
 
 
-#check compile
-cd bls
-./build-bls-signatures.sh
-cd ..
-mvn -DskipTests clean install
+# mvn -Pno-build-bls -DskipTests clean install
 

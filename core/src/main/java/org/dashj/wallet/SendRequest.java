@@ -24,7 +24,7 @@ import static org.dashj.script.ScriptOpCodes.OP_RETURN;
 import java.math.BigInteger;
 import java.util.Date;
 
-import org.bitcoin.protocols.payments.Protos.PaymentDetails;
+import org.dash.protocols.payments.Protos.PaymentDetails;
 import org.dashj.core.Address;
 import org.dashj.core.Coin;
 import org.dashj.core.Context;
