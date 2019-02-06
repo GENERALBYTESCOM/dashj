@@ -22,7 +22,7 @@ import org.dashj.protocols.payments.PaymentProtocolException;
 import org.dashj.protocols.payments.PaymentSession;
 import org.dashj.uri.BitcoinURI;
 import org.dashj.uri.BitcoinURIParseException;
-import org.bitcoin.protocols.payments.Protos;
+import org.dash.protocols.payments.Protos;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -26,7 +26,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-import org.bitcoin.protocols.payments.Protos;
+import org.dash.protocols.payments.Protos;
 import org.dashj.core.*;
 import org.dashj.crypto.X509Utils;
 import org.dashj.script.ScriptBuilder;
