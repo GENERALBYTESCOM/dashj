@@ -17,6 +17,7 @@
 package org.dashj.protocols.channels;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import org.dashj.core.*;
 import org.dashj.protocols.channels.PaymentChannelCloseException.CloseReason;
 import org.dashj.utils.Threading;
@@ -425,7 +426,7 @@ public class PaymentChannelServer {
                         log.info("Failed retrieving paymentIncrease info future");
                         error("Failed processing payment update", Protos.Error.ErrorCode.OTHER, CloseReason.UPDATE_PAYMENT_FAILED);
                     }
-                });
+                }, MoreExecutors.directExecutor());
             }
         }
 
@@ -543,7 +544,7 @@ public class PaymentChannelServer {
                 log.error("Failed to broadcast settlement tx", t);
                 conn.destroyConnection(clientRequestedClose);
             }
-        });
+        }, MoreExecutors.directExecutor());
     }
 
     /**

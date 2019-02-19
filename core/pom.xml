@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.dashj</groupId>
         <artifactId>dashj-parent</artifactId>
-        <version>0.15.20190206</version>
+        <version>0.15.20190218</version>
     </parent>
 
     <artifactId>dashj-core</artifactId>
@@ -395,12 +395,12 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>18.0</version>
+            <version>27.0.1-android</version><!-- android variant doesn't require java 8 and can run on both android and jre -->
         </dependency>
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
-            <version>2.0.1</version>
+            <version>3.0.2</version>
         </dependency>
         <dependency>
             <groupId>net.jcip</groupId>
@@ -435,9 +435,15 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.bitcoinj</groupId>
+            <groupId>org.bitcoinj</groupId><!-- use bitcoinj, there are no changes in dashj and it causes duplicated classes -->
             <artifactId>orchid</artifactId>
-            <version>1.2.1</version>
+	    <version>1.2.1</version>
+	    <exclusions>
+              <exclusion>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+              </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.squareup.okhttp</groupId>
