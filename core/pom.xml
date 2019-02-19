@@ -435,9 +435,15 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.dashj</groupId>
+            <groupId>org.bitcoinj</groupId><!-- use bitcoinj, there are no changes in dashj and it causes duplicated classes -->
             <artifactId>orchid</artifactId>
-            <version>1.2.1</version>
+	    <version>1.2.1</version>
+	    <exclusions>
+              <exclusion>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+              </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.squareup.okhttp</groupId>
