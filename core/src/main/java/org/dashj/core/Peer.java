@@ -20,6 +20,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
+import com.google.common.util.concurrent.MoreExecutors;
 import org.dashj.core.listeners.*;
 import org.dashj.evolution.GetSimplifiedMasternodeListDiff;
 import org.dashj.evolution.SimplifiedMasternodeListDiff;
@@ -180,7 +181,7 @@ public class Peer extends PeerSocketHandler {
                     checkState(peers.size() == 2 && peers.get(0) == peers.get(1));
                     return peers.get(0);
                 }
-            });
+            }, MoreExecutors.directExecutor());
 
     /**
      * <p>Construct a peer that reads/writes from the given block chain.</p>
@@ -909,7 +910,7 @@ public class Peer extends PeerSocketHandler {
                                     log.error("Error was: ", throwable);
                                     // Not much more we can do at this point.
                                 }
-                            });
+                            }, MoreExecutors.directExecutor());
                         } else {
                             wallet.receivePending(tx, null);
 
@@ -978,7 +979,7 @@ public class Peer extends PeerSocketHandler {
             public void onFailure(Throwable throwable) {
                 resultFuture.setException(throwable);
             }
-        });
+        }, MoreExecutors.directExecutor());
         return resultFuture;
     }
 
@@ -1042,7 +1043,7 @@ public class Peer extends PeerSocketHandler {
                             public void onFailure(Throwable throwable) {
                                 resultFuture.setException(throwable);
                             }
-                        });
+                        }, MoreExecutors.directExecutor());
                     }
                 }
 
@@ -1050,7 +1051,7 @@ public class Peer extends PeerSocketHandler {
                 public void onFailure(Throwable throwable) {
                     resultFuture.setException(throwable);
                 }
-            });
+            }, MoreExecutors.directExecutor());
             // Start the operation.
             sendMessage(getdata);
         } catch (Exception e) {

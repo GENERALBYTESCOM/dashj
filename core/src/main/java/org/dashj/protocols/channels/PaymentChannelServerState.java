@@ -16,6 +16,7 @@
 
 package org.dashj.protocols.channels;
 
+import com.google.common.util.concurrent.MoreExecutors;
 import org.dashj.wallet.SendRequest;
 import org.dashj.wallet.Wallet;
 
@@ -211,7 +212,7 @@ public abstract class PaymentChannelServerState {
                 stateMachine.transition(State.ERROR);
                 future.setException(throwable);
             }
-        });
+        }, MoreExecutors.directExecutor());
         return future;
     }
 

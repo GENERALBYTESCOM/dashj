@@ -22,6 +22,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
 import org.dashj.core.*;
 import org.dashj.crypto.TransactionSignature;
 import org.dashj.script.Script;
@@ -188,7 +189,7 @@ public abstract class PaymentChannelClientState {
             public void onFailure(Throwable t) {
                 Throwables.propagate(t);
             }
-        });
+        }, MoreExecutors.directExecutor());
     }
 
     private synchronized void deleteChannelFromWallet() {
