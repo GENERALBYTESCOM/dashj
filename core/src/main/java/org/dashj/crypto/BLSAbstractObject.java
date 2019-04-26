@@ -4,11 +4,14 @@ import com.google.common.base.Preconditions;
 import org.dashj.core.*;
 import org.dashj.bls.BLSObject;
 import org.dashj.bls.JNI;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
 public abstract class BLSAbstractObject extends ChildMessage {
+    private static final Logger log = LoggerFactory.getLogger(BLSAbstractObject.class);
     protected Sha256Hash hash;
     protected int serializedSize;
     boolean valid;
@@ -18,7 +21,8 @@ public abstract class BLSAbstractObject extends ChildMessage {
         try {
             System.loadLibrary(JNI.LIBRARY_NAME);
         } catch (UnsatisfiedLinkError x) {
-            throw new RuntimeException(x.getMessage());
+            log.error("", x);
+            throw new RuntimeException(x);
         }
     }
 
