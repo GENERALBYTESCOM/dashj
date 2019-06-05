@@ -53,19 +53,15 @@
   </mailingLists>
 
   <distributionManagement>
-
-    <repository>
-      <id>bintray-dash-Dashj</id>
-      <name>dash-Dashj</name>
-      <url>https://api.bintray.com/maven/dash/Dashj/org.dashj/;publish=1</url>
-    </repository>
-
     <snapshotRepository>
-      <id>snapshots</id>
-      <name>oss-jfrog-artifactory-snapshots</name>
-      <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+      <id>gb.artifactory</id>
+      <url>${gb.artifactory.url}</url>
     </snapshotRepository>
 
+    <repository>
+      <id>gb.artifactory</id>
+      <url>${gb.artifactory.url}</url>
+    </repository>
   </distributionManagement>
 
   <!-- Common build plugin configuration -->
