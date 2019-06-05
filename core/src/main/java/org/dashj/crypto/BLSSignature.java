@@ -7,6 +7,7 @@ import org.dashj.core.Sha256Hash;
 import org.dashj.bls.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BLSSignature extends BLSAbstractObject {
 
