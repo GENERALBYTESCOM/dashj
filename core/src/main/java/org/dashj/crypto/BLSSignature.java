@@ -7,10 +7,12 @@ import org.dashj.core.Sha256Hash;
 import org.dashj.bls.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BLSSignature extends BLSAbstractObject {
 
     public static int BLS_CURVE_SIG_SIZE   = 96;
+    static byte [] emptySignatureBytes = new byte[BLS_CURVE_SIG_SIZE];
     InsecureSignature signatureImpl;
 
     BLSSignature() {
@@ -39,6 +41,8 @@ public class BLSSignature extends BLSAbstractObject {
     @Override
     boolean internalSetBuffer(byte[] buffer) {
         try {
+            if(Arrays.equals(buffer, emptySignatureBytes))
+                return false;
             signatureImpl = InsecureSignature.FromBytes(buffer);
             return true;
         } catch (Exception x) {
@@ -55,7 +59,7 @@ public class BLSSignature extends BLSAbstractObject {
     @Override
     protected void parse() throws ProtocolException {
         byte buffer[] = readBytes(BLS_CURVE_SIG_SIZE);
-        internalSetBuffer(buffer);
+        valid = internalSetBuffer(buffer);
         serializedSize = BLS_CURVE_SIG_SIZE;
         length = cursor - offset;
     }
